@@ -472,7 +472,7 @@ class ChirpController extends Controller
 
 We're using Laravel's powerful validation feature to ensure that the user provides a message and that it won't exceed the 255 character limit of the database column we'll be creating.
 
-We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship. We will define that relationship soon.
+We're then creating a record that will belong to the logged-in user by leveraging a `chirps` relationship. We will define that relationship soon.
 
 Finally, when using Inertia, we can return a redirect response to instruct Inertia to reload our `chirps.index` route.
 
@@ -541,7 +541,7 @@ class User extends Authenticatable
 
 Passing all of the data from a request to your model can be risky. Imagine you have a page where users can edit their profiles. If you were to pass the entire request to the model, then a user could edit *any* column they like, such as an `is_admin` column. This is called a [mass assignment vulnerability](https://en.wikipedia.org/wiki/Mass_assignment_vulnerability).
 
-Laravel protects you from accidentally doing this by blocking mass assignment by default. Mass assignment is very convenient though, as it prevents you from having to assign each attribute one-by-one. We can enable mass assignment for safe attributes by marking them as "fillable".
+Laravel protects you from accidentally doing this by blocking mass assignments by default. Mass assignment is very convenient though, as it prevents you from having to assign each attribute one-by-one. We can enable mass assignment for safe attributes by marking them as "fillable".
 
 Let's add the `$fillable` property to our `Chirp` model to enable mass-assignment for the `message` attribute:
 
@@ -603,7 +603,7 @@ return new class extends Migration
 };
 ```
 
-We haven't migrated the database since we added this migration, so let do it now:
+We haven't migrated the database since we added this migration, so let's do it now:
 
 ```shell
 php artisan migrate
@@ -622,7 +622,7 @@ If you leave the message field empty, or enter more than 255 characters, then yo
 
 ### Artisan Tinker
 
-This is great time to learn about [Artisan Tinker](https://laravel.com/docs/artisan#tinker), a *REPL* ([Read-eval-print loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) where you can execute arbitrary PHP code in your Laravel application.
+This is a great time to learn about [Artisan Tinker](https://laravel.com/docs/artisan#tinker), a *REPL* ([Read-eval-print loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) where you can execute arbitrary PHP code in your Laravel application.
 
 In your console, start a new tinker session:
 
